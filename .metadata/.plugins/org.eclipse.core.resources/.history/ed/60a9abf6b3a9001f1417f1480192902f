@@ -1,0 +1,5 @@
+package edu.jsp.LibraryBookSearchApplication.Entity;
+
+public class Book {
+
+}

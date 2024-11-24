@@ -1,0 +1,5 @@
+package edu.jsp.LibraryBookSearchApplication_Repository;
+
+public interface BookRepository {
+
+}

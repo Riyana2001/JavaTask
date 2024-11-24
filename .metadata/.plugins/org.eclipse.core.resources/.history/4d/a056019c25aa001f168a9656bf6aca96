@@ -1,0 +1,24 @@
+package edu.jsp.LibraryBookSearchApplication_Entity;
+
+import jakarta.persistence.*;
+import lombok.Data;
+
+@Entity
+@Data
+@Table(name = "LibraryBooks")
+public class Book {
+
+	    @Id
+	    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	    private int id;
+
+	    @Column(nullable = false)
+	    private String title;
+	    
+	    @Column(nullable = false)
+	    private String author;
+	    
+	    private String genre;
+	    
+	    private int yearPublished;
+}

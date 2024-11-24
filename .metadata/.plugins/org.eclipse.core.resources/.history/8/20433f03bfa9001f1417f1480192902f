@@ -1,0 +1,59 @@
+package edu.jsp.LibraryBookSearchApplication;
+
+import java.util.Scanner;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+
+import edu.jsp.LibraryBookSearchApplication_Entity.Book;
+import edu.jsp.LibraryBookSearchApplication_Services.BookService;
+
+@SpringBootApplication
+public class LibraryBookSearchApplication {
+
+	public static void main(String[] args) {
+		ApplicationContext context=SpringApplication.run(LibraryBookSearchApplication.class, args);
+		
+		BookService service=context.getBean(BookService.class);
+		
+		 System.out.println("1: Add Book");
+	     System.out.println("2: Update Book");
+	     System.out.println("3: Delete Book");
+	     System.out.println("4: Search Book");
+	     
+	     Scanner sc = new Scanner(System.in);
+	     int choice = sc.nextInt();
+	        
+	     switch(choice) {
+	        case 1:{
+	        	Book book=new Book();
+	        	System.out.println("Enter Book Id");
+	            int id=sc.nextInt();
+	        	book.setId(id);
+	        	
+	        	System.out.println("Enter Book Title ");
+	        	String title=sc.next();
+	        	book.setTitle(title);
+	        	
+	        	System.out.println("Enter Author name ");
+	        	String author=sc.next();
+	        	book.setAuthor(author);
+	        	
+	        	System.out.println("Enter Genre");
+	        	String genre=sc.next();
+	        	book.setGenre(genre);
+	        	
+	        	System.out.println("Enter year published");
+	        	int year=sc.nextInt();
+	        	book.setYearPublished(year);
+	        	
+	        	service.addBook(book);
+	        	break;
+	        	
+	        }
+	        	
+	        }
+	}
+
+}
